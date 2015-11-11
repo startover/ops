@@ -1,37 +1,37 @@
-#Í³¼Æapache cookie logÖĞ·ÃÎÊÆµÂÊ×î¸ßµÄ20¸öipºÍ·ÃÎÊ´ÎÊı
+#ç»Ÿè®¡apache cookie logä¸­è®¿é—®é¢‘ç‡æœ€é«˜çš„20ä¸ªipå’Œè®¿é—®æ¬¡æ•°
 cat cookielog | awk '{ a[$1] += 1; } END { for(i in a) printf("%d, %s\n", a[i], i ); }' | sort -n | tail -20
 
-#Í³¼Æapache cookie logÖĞ·µ»Ø404µÄurlÁĞ±í
+#ç»Ÿè®¡apache cookie logä¸­è¿”å›404çš„urlåˆ—è¡¨
 awk '$11 == 404 {print $8}' access_log | uniq -c | sort -rn | head
 
-#Í³¼ÆÒ»¸öip·ÃÎÊ³¬¹ı20´ÎµÄipºÍ·ÃÎÊ´ÎÊıÁĞ±í£¬°Ñ$1¸ÄÎªurl¶ÔÓ¦µÄ$9,Ôò¿ÉÒÔÍ³¼ÆÃ¿¸öurlµÄ·ÃÎÊ´ÎÊı
+#ç»Ÿè®¡ä¸€ä¸ªipè®¿é—®è¶…è¿‡20æ¬¡çš„ipå’Œè®¿é—®æ¬¡æ•°åˆ—è¡¨ï¼ŒæŠŠ$1æ”¹ä¸ºurlå¯¹åº”çš„$9,åˆ™å¯ä»¥ç»Ÿè®¡æ¯ä¸ªurlçš„è®¿é—®æ¬¡æ•°
 cat access_log | awk '{print $1}' | sort | uniq -c | sort -n | awk '{ if ($1 > 20)print $1,$2}'
 
-#Í³¼ÆÃ¿¸öurlµÄÆ½¾ù·ÃÎÊÊ±¼ä
+#ç»Ÿè®¡æ¯ä¸ªurlçš„å¹³å‡è®¿é—®æ—¶é—´
 cat cookielog | awk '{ a[$6] += 1; b[$6] += $11; } END { for(i in a) printf("%d, %d, %s\n", a[i],a[i]/b[i] i ); }' | sort -n | tail -20
 
 
-#´òÓ¡·ÃÎÊapacheµÄĞÂipÁĞ±í
+#æ‰“å°è®¿é—®apacheçš„æ–°ipåˆ—è¡¨
 tail -f access.log | awk -W interactive '!x[$1]++ {print $1}'
 
-#Í¨¹ıÈÕÖ¾²é¿´µ±ÌìÖ¸¶¨ip·ÃÎÊ´ÎÊı¹ıµÄurlºÍ·ÃÎÊ´ÎÊı:
-cat access.log | grep "10.0.21.17" | awk '{print $7}' | sort | uniq -c | sort ¨Cnr
+#é€šè¿‡æ—¥å¿—æŸ¥çœ‹å½“å¤©æŒ‡å®šipè®¿é—®æ¬¡æ•°è¿‡çš„urlå’Œè®¿é—®æ¬¡æ•°:
+cat access.log | grep "10.0.21.17" | awk '{print $7}' | sort | uniq -c | sort â€“nr
 
 
-#Í¨¹ıÈÕÖ¾²é¿´µ±Ìì·ÃÎÊ´ÎÊı×î¶àµÄÊ±¼ä¶Î
+#é€šè¿‡æ—¥å¿—æŸ¥çœ‹å½“å¤©è®¿é—®æ¬¡æ•°æœ€å¤šçš„æ—¶é—´æ®µ
 awk '{print $4}' access.log | grep "26/Mar/2012" |cut -c 20-50|sort|uniq -c|sort -nr|head
 
-#²é¿´Ä³Ò»ÌìµÄ·ÃÎÊÁ¿
+#æŸ¥çœ‹æŸä¸€å¤©çš„è®¿é—®é‡
 cat access_log|grep '12/Nov/2012'|grep "******.htm"|wc|awk '{print $1}'|uniq 
 
-#²é¿´·ÃÎÊÊ±¼ä³¬¹ı30msµÄurlÁĞ±í
-cat access_log|awk ¡®($NF > 30){print $7}¡¯|sort -n|uniq -c|sort -nr|head -20 
+#æŸ¥çœ‹è®¿é—®æ—¶é—´è¶…è¿‡30msçš„urlåˆ—è¡¨
+cat access_log|awk â€˜($NF > 30){print $7}â€™|sort -n|uniq -c|sort -nr|head -20 
 
-#ÁĞ³öÏìÓ¦Ê±¼ä³¬¹ı60mµÄurlÁĞ±í²¢Í³¼Æ³öÏÖ´ÎÊı
-cat access_log |awk ¡®($NF > 60 && $7~/\.php/){print $7}¡¯|sort -n|uniq -c|sort -nr|head -100 
+#åˆ—å‡ºå“åº”æ—¶é—´è¶…è¿‡60mçš„urlåˆ—è¡¨å¹¶ç»Ÿè®¡å‡ºç°æ¬¡æ•°
+cat access_log |awk â€˜($NF > 60 && $7~/\.php/){print $7}â€™|sort -n|uniq -c|sort -nr|head -100 
 
-#ÅÅ³ıËÑË÷ÒıÇæºóµÄurl·ÃÎÊ´ÎÊı
+#æ’é™¤æœç´¢å¼•æ“åçš„urlè®¿é—®æ¬¡æ•°
 sed "/Baiduspider/d;/Googlebot/d;/Sogou web spider/d;" xxx.log|awk -F' ' '{print $7}'|sort | uniq -c | sort -k1,2 -nr 
 
-#Í³¼Æ/index.htmlÒ³ÃæµÄ·ÃÎÊuv
-grep "/index.html" access.log | cut ¨Cd ¡° ¡± ¨Cf 4| sort | uniq | wc ¨Cl 
+#ç»Ÿè®¡/index.htmlé¡µé¢çš„è®¿é—®uv
+grep "/index.html" access.log | cut â€“d â€œ â€ â€“f 4| sort | uniq | wc â€“l 
