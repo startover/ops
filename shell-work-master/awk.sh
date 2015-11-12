@@ -1,7 +1,7 @@
 ﻿#删除temp文件的重复行
 awk '!($0 in array) { array[$0]; print }' temp
 
-#查看最长使用的10个unix命令
+#查看最常使用的10个unix命令
 awk '{print $1}' ~/.bash_history | sort | uniq -c | sort -rn | head -n 10
 
 #查看机器的ip列表
