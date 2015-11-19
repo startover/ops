@@ -1,15 +1,8 @@
----
-layout: post
-title:  "ngxtop：命令行实时监控Nginx"
-category: news 
-author: "cnwelee"
----
-
 在生产环境中需要实时监控Nginx服务器，然而不想安装部署Nagios、Zabbix或者Munin等复杂的监控软件，只求一种快速简便的办法去监控Nginx服务器的请求，ngxtop便成了我们的菜。
 
 ##安装
 
-ngxtop是python编写的，你可以使用pip安装
+ngxtop是python编写的，可以使用pip安装
 
 ```
 $ sudo pip install ngxtop
