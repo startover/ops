@@ -68,7 +68,7 @@ $ngxtop info
 
 #####自定义显示的变量
 ```
-ngxtop print request http_user_agent remote_addr
+$ngxtop print request http_user_agent remote_addr
 ```
 
 #####显示请求最多的客户端IP地址
