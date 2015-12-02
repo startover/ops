@@ -36,9 +36,13 @@ Cacti是一个用rrdtool画图的网络监控系统，集成了各种数据收�
 
 #4.Nagios
 Cacti主要用于历史数据收集和画图，Nagios重点不在图形化监控，而在于监视大量服务器上面的大批服务是否正常，集成的报警功能比cacti强的多。
-生产环境中通常是nagios+cacti组合的方式。
-只是为了监控服务器/服务是否运行，nagios足矣；涉及画图的话，nagios+cacti通过NPC插件结合对接非常繁琐，调试ndo2db组件也会各种折腾，耗时费力，很明显没有zabbix包办报警+画图的方式靠谱。
-另外，nagios半死不活的插件监控windows server什么的还是很痛苦的，zabbix的agentd在windows下则运行良好。
+生产环境中通常是nagios+cacti组合的方式。mod_gearman插件做分布式，pnp插件做绘图，nagios-api做restful交互。
+
+- 只是为了监控服务器/服务是否运行，nagios足矣；
+- nagios轻量灵活，插件机制使得可以用熟悉的语言实现几乎任何自己想要实现的监控监控；
+- 涉及画图的话，nagios+cacti通过NPC插件结合对接非常繁琐，调试ndo2db组件也会各种折腾，耗时费力，很明显没有zabbix包办报警+画图的方式简单
+- 图表的话交给cacti或者rrdtool实现是必须的，但可能遇到的困难如上；
+- 另外，nagios半死不活的插件监控windows server什么的还是很痛苦的，zabbix的agentd在windows下则运行良好。
 
 #5.Zabbix
 zabbix是一个基于WEB界面的提供分布式系统监视以及网络监视功能的企业级的开源解决方案。能监视各种网络参数，保证服务器系统的安全运营;并提供柔软的通知机制以让系统管理员快速定位/解决存在的各种问题。
@@ -68,3 +72,6 @@ zabbix由zabbix server与可选组件zabbix agent2部分构成
 - 网络状况
 - 端口监视
 - 日志监视
+
+#6.Open-Falcon
+小米家开源的一款“互联网企业级监控系统”，乱入，用气来听说还不错
