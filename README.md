@@ -1,5 +1,8 @@
 # ops
 Ops !!!  It's Me !!! 
 
-- shell works
+##shell works
+- wait
+
+##monitors
 - ngxtop 用法小结
