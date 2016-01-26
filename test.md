@@ -1,12 +1,12 @@
 ##简介
 
-系统环境集成了Node和Nginx服务，适用于单核心1G内存机器(配置高一些也可以)，是为弹性伸缩任务优化的镜像。
+系统集成了Node和Nginx等服务，适用于单核1G或更高配置ECS，是为弹性伸缩任务优化的镜像。
 
 ##功能列表
 
-- 开机自动连接Node-T1同步最新代码（onions/onionfp/NginxConfiguration）
-- 同步代码后自动启动nginx和node进程（pm2管理）
-- 内置可视化手动一健更新代码脚本(auto-init-onions-v)
+- 开机自动从Node-T1处同步最新代码  `onions/onionfp/NginxConfiguration`
+- 代码拉取成功自动启动nginx和node  `node由PM2管理`
+- 内置用于手动更新代码的可视化脚本 `auto-init-onions-v`
 
 ##更新日志
 
@@ -37,3 +37,7 @@
   + 系统镜像Node4AS-SYS
   + 数据快照Node4AS-DAT
   + 20G+100G模式
+
+##备注
+
+系统镜像由原2.5版Node系统镜像删减进化而来。
