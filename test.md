@@ -1,11 +1,11 @@
 ##简介
 
-系统集成了Node和Nginx等服务，适用于单核1G或更高配置ECS，是为弹性伸缩任务优化的镜像<sup>1</sup> 。
+系统集成了Node和Nginx等服务，适用于单核1G或更高配置ECS，是为弹性伸缩任务优化的镜像 <sup>1</sup> 。
 
 ###功能列表
 
 - 开机自动从Node-T1处同步最新代码`onions/onionfp/NginxConfiguration`
-- 代码拉取成功自动启动nginx和node <sup>2</sup> 
+- 代码拉取成功自动启动nginx和node  <sup>2</sup>
 - 内置用于手动更新代码的可视化脚本`auto-init-onions-v`
 
 ###更新日志
@@ -40,5 +40,5 @@
 
 ###备注
 
- <sup>1</sup> 系统镜像由原2.5版服务器架构中的Node系统镜像删减进化而来
- <sup>2</sup> node进程由PM2管理 
+ 1. 系统镜像由原2.5版服务器架构中的Node镜像删减进化而来
+ 2. Node进程由PM2管理
