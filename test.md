@@ -1,13 +1,12 @@
 ## IT与网络
 
-###办公网络
+```bash
+办公网络
+# Everything about our Network.
 
-Everything about Network.
+打印机
+# All about our Printer.
 
-###打印机
-
-All about our printer.
-
-###其他
-
-Maybe ,there will be something about PC or anyother funny thing soon .
+其他东西
+# Maybe ,there will be something about PC or anyother funny thing soon .
+```
