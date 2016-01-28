@@ -5,11 +5,11 @@
 | Repo                        | Description                        |
 | :-------------------------- | :--------------------------------- |
 | op                          | `Nginx` 运维专用                   |
-| onionfp                     | `HTML ` yangcong345前端项目        |
-| YCMath345-Android           | `Java ` 洋葱数学Android项目        |
-| mobile-exercises            | `JS   ` 洋葱数学移动端做题项目     |
-| onions                      | `JS   ` yangcong345后端项目        |
-| OrderProcessor              | `JS   ` yangcong345付款项目        |
+| onionfp                     | ` HTML` yangcong345前端项目        |
+| YCMath345-Android           | ` Java` 洋葱数学Android项目        |
+| mobile-exercises            | `J   S` 洋葱数学移动端做题项目     |
+| onions                      | `J   S` yangcong345后端项目        |
+| OrderProcessor              | ` J  S ` yangcong345付款项目        |
 | YCMath345-iOS               | `OC   ` 洋葱数学iOS客户端项目      |
 | CourseBuilder2.0            | `JS   ` 课程后台项目               |
 | videoManager                | `JS   ` 视频管理项目               |
