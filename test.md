@@ -5,8 +5,8 @@
 | Repo                        | Description                        |
 | :-------------------------- | :--------------------------------- |
 | op                          | `Nginx` 运维专用                   |
-| onionfp                     | ` HTML` yangcong345前端项目        |
-| YCMath345-Android           | ` Java` 洋葱数学Android项目        |
+| onionfp                     | `HTML>` yangcong345前端项目        |
+| YCMath345-Android           | ` Java` > 洋葱数学Android项目        |
 | mobile-exercises            | `J   S` 洋葱数学移动端做题项目     |
 | onions                      | `J   S` yangcong345后端项目        |
 | OrderProcessor              | ` J  S ` yangcong345付款项目        |
