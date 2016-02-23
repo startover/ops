@@ -1,6 +1,6 @@
 mongodb实时监控工具，可以同时对多个MongoDB服务器进行监控。显示当前操作。
 
-##安装
+## 安装
 
 motop是python编写的，可以使用pip安装
 
@@ -10,7 +10,7 @@ $ sudo pip install git+https://github.com/tart/motop.git
 
 当然作者还提供了easy_install及本地安装等方式
 
-##使用
+## 使用
 
 使用方法：
 

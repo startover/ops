@@ -1,6 +1,6 @@
 在生产环境中需要实时监控Nginx服务器，然而不想安装部署Nagios、Zabbix或者Munin等复杂的监控软件，只求一种快速简便的办法去监控Nginx服务器的请求，ngxtop便成了我们的菜。
 
-##安装
+## 安装
 
 ngxtop是python编写的，可以使用pip安装
 
@@ -8,7 +8,7 @@ ngxtop是python编写的，可以使用pip安装
 $ sudo pip install ngxtop
 ```
 
-##使用
+## 使用
 
 使用方法：
 
@@ -41,44 +41,43 @@ ngxtop info
 - status
 - time_local
 
-#####监控Nginx
+##### 监控Nginx
 
 ```
 $ ngxtop
 ```
 nginx默认会从配置文件中查找日志地址
 
-#####显示前20个最频繁的请求
+##### 显示前20个最频繁的请求
 
 ```
 $ngxtop -n 20
 ```
 
-#####获取Nginx基本信息
+##### 获取Nginx基本信息
 ```
 $ngxtop info
 ```
 
-#####自定义显示的变量
+##### 自定义显示的变量
 ```
 $ngxtop print request http_user_agent remote_addr
 ```
 
-#####显示请求最多的客户端IP地址
+##### 显示请求最多的客户端IP地址
 
 ```
 $ngxtop top remote_addr
 ```
 
-#####显示状态码是404的请求
+##### 显示状态码是404的请求
 
 ```
 $ngxtop -i 'status==404' print request status
 ```
 
-#####监控Apache服务器
+##### 监控Apache服务器
 
 ```
 $tail -f /var/log/apache2/access.log | ngxtop -f common
 ```
-
